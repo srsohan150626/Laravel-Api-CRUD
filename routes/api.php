@@ -10,4 +10,4 @@ Route::group(['middleware' => 'api','prefix' => 'auth','namespace' => 'Api'], fu
 
 });
 
-Route::apiResource('/products','Api\ProductsController');
+Route::apiResource('/products','Api\ProductsController')->middleware('api');

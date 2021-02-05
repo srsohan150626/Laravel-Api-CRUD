@@ -10,6 +10,11 @@ use DB;
 
 class ProductsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT');
+    }
+
     public function index()
     {
         $products = Product::orderBy('id','DESC')->get();
