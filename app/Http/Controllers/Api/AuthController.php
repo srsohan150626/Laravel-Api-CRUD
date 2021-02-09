@@ -29,21 +29,12 @@ class AuthController extends Controller
         return response()->json(['error' => 'Email or Password Invalid!'], 401);
     }
 
-    public function me()
-    {
-        return response()->json($this->guard()->user());
-    }
 
     public function logout()
     {
         $this->guard()->logout();
 
         return response()->json(['message' => 'Successfully logged out']);
-    }
-
-    public function refresh()
-    {
-        return $this->respondWithToken($this->guard()->refresh());
     }
 
     public function signup(Request $request)

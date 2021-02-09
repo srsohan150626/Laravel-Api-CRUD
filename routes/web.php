@@ -10,11 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// $ php artisan serve --host=192.168.0.104 --port=8088
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/{vue_capture?}',function () {
-    return view('welcome');
-})->where('vue_capture', '[\/\w\.-]*');
